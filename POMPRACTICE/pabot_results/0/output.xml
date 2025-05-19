@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.14.0a7 on win32)" generated="2025-05-19T20:45:39.523870" rpa="false" schemaversion="5">
+<suite id="s1" name="POMPRACTICE" source="C:\RobotFrameworkBasics\POMPRACTICE">
+<suite id="s1-s1" name="TestCases" source="C:\RobotFrameworkBasics\POMPRACTICE\TestCases">
+<suite id="s1-s1-s1" name="LoginTest" source="C:\RobotFrameworkBasics\POMPRACTICE\TestCases\LoginTest.robot">
+<test id="s1-s1-s1-t1" name="Login With Valid Credentials" line="7">
+<kw name="Open Browser To Login Page" owner="LoginResources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-19T20:45:40.056986" level="INFO">Opening browser 'chrome' to base url 'https://ecommerce-playground.lambdatest.io/index.php?route=account/login'.</msg>
+<arg>https://ecommerce-playground.lambdatest.io/index.php?route=account/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-19T20:45:40.056561" elapsed="6.110190"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-19T20:45:46.167056" elapsed="0.069336"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-19T20:45:46.237873" elapsed="0.105381"/>
+</kw>
+<status status="PASS" start="2025-05-19T20:45:40.055299" elapsed="6.288132"/>
+</kw>
+<kw name="Input Email" owner="LoginResources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T20:45:46.344688" level="INFO">Typing text '2k21eee40@kiot.ac.in' into text field 'xpath=//input[@id="input-email"]'.</msg>
+<arg>${EMAIL_FIELD}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T20:45:46.344271" elapsed="0.296325"/>
+</kw>
+<arg>2k21eee40@kiot.ac.in</arg>
+<status status="PASS" start="2025-05-19T20:45:46.343683" elapsed="0.297285"/>
+</kw>
+<kw name="Input passwrd" owner="LoginResources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T20:45:46.642504" level="INFO">Typing text 'KIOT' into text field 'xpath=//input[@id="input-password"]'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T20:45:46.642087" elapsed="0.157116"/>
+</kw>
+<arg>KIOT</arg>
+<status status="PASS" start="2025-05-19T20:45:46.641581" elapsed="0.157893"/>
+</kw>
+<kw name="Click Login Button" owner="LoginResources">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-19T20:45:46.801337" level="INFO">Clicking button 'xpath=//input[@value="Login"]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T20:45:46.800764" elapsed="2.620790"/>
+</kw>
+<status status="PASS" start="2025-05-19T20:45:46.799885" elapsed="2.621883"/>
+</kw>
+<kw name="Verify Login Success" owner="LoginResources">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-19T20:45:49.440821" level="INFO">Current page contains element 'xpath=//h2[text()="My Account"]'.</msg>
+<arg>${MY_ACCOUNT_HEADER}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-19T20:45:49.422527" elapsed="0.018425"/>
+</kw>
+<status status="PASS" start="2025-05-19T20:45:49.421985" elapsed="0.019093"/>
+</kw>
+<kw name="Close the Browser" owner="LoginResources" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-05-19T20:45:49.441770" elapsed="2.424176"/>
+</kw>
+<status status="PASS" start="2025-05-19T20:45:49.441357" elapsed="2.424973"/>
+</kw>
+<status status="PASS" start="2025-05-19T20:45:40.052049" elapsed="11.814492"/>
+</test>
+<status status="PASS" start="2025-05-19T20:45:39.590235" elapsed="12.278549"/>
+</suite>
+<status status="PASS" start="2025-05-19T20:45:39.588419" elapsed="12.283479"/>
+</suite>
+<status status="PASS" start="2025-05-19T20:45:39.558784" elapsed="12.314605"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="POMPRACTICE" id="s1" pass="1" fail="0" skip="0">POMPRACTICE</stat>
+<stat name="TestCases" id="s1-s1" pass="1" fail="0" skip="0">POMPRACTICE.TestCases</stat>
+<stat name="LoginTest" id="s1-s1-s1" pass="1" fail="0" skip="0">POMPRACTICE.TestCases.LoginTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

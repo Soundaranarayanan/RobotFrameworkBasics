@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.14.0a7 on win32)" generated="2025-05-19T11:16:20.603879" rpa="false" schemaversion="5">
+<suite id="s1" name="Drag" source="C:\RobotFrameworkBasics\Test\Drag.robot">
+<test id="s1-t1" name="Verify that user can drag and drop elements" line="11">
+<kw name="Open the browser with URL">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-19T11:16:21.052311" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/droppable'.</msg>
+<arg>${URL}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-19T11:16:21.051985" elapsed="10.171576"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-19T11:16:31.224132" elapsed="0.097965"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-19T11:16:31.323824" elapsed="0.029534"/>
+</kw>
+<status status="PASS" start="2025-05-19T11:16:21.051066" elapsed="10.303070"/>
+</kw>
+<kw name="Verify element Text before drag">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-19T11:16:31.358023" level="INFO">Verifying element 'id:droppable' contains exact text 'Drop here'.</msg>
+<arg>id:droppable</arg>
+<arg>Drop here</arg>
+<arg>timeout=5</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-19T11:16:31.357197" elapsed="0.051861"/>
+</kw>
+<status status="PASS" start="2025-05-19T11:16:31.356489" elapsed="0.052862"/>
+</kw>
+<kw name="Drag the element and drop">
+<kw name="Drag And Drop" owner="SeleniumLibrary">
+<arg>id:draggable</arg>
+<arg>id:droppable</arg>
+<doc>Drags the element identified by ``locator`` into the ``target`` element.</doc>
+<status status="PASS" start="2025-05-19T11:16:31.412131" elapsed="0.786856"/>
+</kw>
+<status status="PASS" start="2025-05-19T11:16:31.411113" elapsed="0.788135"/>
+</kw>
+<kw name="Verify element Text after drag">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-19T11:16:32.200833" level="INFO">Verifying element 'id:droppable' contains exact text 'Dropped!'.</msg>
+<msg time="2025-05-19T11:16:32.781872" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-44.png"&gt;&lt;img src="selenium-screenshot-44.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-19T11:16:32.782210" level="FAIL">timeout=5</msg>
+<arg>id:droppable</arg>
+<arg>Dropped!</arg>
+<arg>timeout=5</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2025-05-19T11:16:32.200376" elapsed="0.586200">timeout=5</status>
+</kw>
+<status status="FAIL" start="2025-05-19T11:16:32.199820" elapsed="0.587222">timeout=5</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-19T11:16:32.787856" elapsed="2.890809"/>
+</kw>
+<status status="FAIL" start="2025-05-19T11:16:21.050016" elapsed="14.629740">timeout=5</status>
+</test>
+<doc>To validate the Drag and drop</doc>
+<status status="FAIL" start="2025-05-19T11:16:20.605767" elapsed="15.079567"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Drag" id="s1" pass="0" fail="1" skip="0">Drag</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

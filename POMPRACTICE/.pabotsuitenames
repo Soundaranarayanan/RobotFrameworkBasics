@@ -1,0 +1,6 @@
+datasources:c1415a4ad94ba051e436fcb84d916581507decf8
+commandlineoptions:65f95c924ba97541f47949701c4e3c51192a5b43
+suitesfrom:no-suites-from-option
+file:736692cff74c5b64b7764095fe9a96c78a8d4bd7
+--test POMPRACTICE.TestCases.LoginTest.Login With Valid Credentials
+--test POMPRACTICE.TestCases.LoginTest.Login With Invalid Credentials

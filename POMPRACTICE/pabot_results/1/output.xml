@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.14.0a7 on win32)" generated="2025-05-19T20:45:39.539225" rpa="false" schemaversion="5">
+<suite id="s1" name="POMPRACTICE" source="C:\RobotFrameworkBasics\POMPRACTICE">
+<suite id="s1-s1" name="TestCases" source="C:\RobotFrameworkBasics\POMPRACTICE\TestCases">
+<suite id="s1-s1-s1" name="LoginTest" source="C:\RobotFrameworkBasics\POMPRACTICE\TestCases\LoginTest.robot">
+<test id="s1-s1-s1-t1" name="Login With Invalid Credentials" line="13">
+<kw name="Open Browser To Login Page" owner="LoginResources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-19T20:45:40.076885" level="INFO">Opening browser 'chrome' to base url 'https://ecommerce-playground.lambdatest.io/index.php?route=account/login'.</msg>
+<arg>https://ecommerce-playground.lambdatest.io/index.php?route=account/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-19T20:45:40.076108" elapsed="3.969411"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-19T20:45:44.045943" elapsed="2.438733"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-19T20:45:46.485097" elapsed="0.023311"/>
+</kw>
+<status status="PASS" start="2025-05-19T20:45:40.073669" elapsed="6.434904"/>
+</kw>
+<kw name="Input Email" owner="LoginResources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T20:45:46.509690" level="INFO">Typing text 'invaliduser@example.com' into text field 'xpath=//input[@id="input-email"]'.</msg>
+<arg>${EMAIL_FIELD}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T20:45:46.509313" elapsed="0.221983"/>
+</kw>
+<arg>invaliduser@example.com</arg>
+<status status="PASS" start="2025-05-19T20:45:46.508821" elapsed="0.222668"/>
+</kw>
+<kw name="Input passwrd" owner="LoginResources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T20:45:46.732871" level="INFO">Typing text 'wrongpassword' into text field 'xpath=//input[@id="input-password"]'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T20:45:46.732304" elapsed="0.178640"/>
+</kw>
+<arg>wrongpassword</arg>
+<status status="PASS" start="2025-05-19T20:45:46.731734" elapsed="0.179471"/>
+</kw>
+<kw name="Click Login Button" owner="LoginResources">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-19T20:45:46.912832" level="INFO">Clicking button 'xpath=//input[@value="Login"]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T20:45:46.912368" elapsed="0.947561"/>
+</kw>
+<status status="PASS" start="2025-05-19T20:45:46.911624" elapsed="0.948544"/>
+</kw>
+<kw name="Verify Login Failure" owner="LoginResources">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-19T20:45:47.917819" level="INFO">Current page contains element 'xpath=//div[contains(@class, "alert-danger")]'.</msg>
+<arg>${WARNING_MESSAGE}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-19T20:45:47.861156" elapsed="0.056855"/>
+</kw>
+<status status="PASS" start="2025-05-19T20:45:47.860484" elapsed="0.057745"/>
+</kw>
+<kw name="Close the Browser" owner="LoginResources" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-05-19T20:45:47.921091" elapsed="2.214898"/>
+</kw>
+<status status="PASS" start="2025-05-19T20:45:47.919616" elapsed="2.216803"/>
+</kw>
+<status status="PASS" start="2025-05-19T20:45:40.069733" elapsed="10.066979"/>
+</test>
+<status status="PASS" start="2025-05-19T20:45:39.605906" elapsed="10.532405"/>
+</suite>
+<status status="PASS" start="2025-05-19T20:45:39.602474" elapsed="10.538141"/>
+</suite>
+<status status="PASS" start="2025-05-19T20:45:39.576997" elapsed="10.565949"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="POMPRACTICE" id="s1" pass="1" fail="0" skip="0">POMPRACTICE</stat>
+<stat name="TestCases" id="s1-s1" pass="1" fail="0" skip="0">POMPRACTICE.TestCases</stat>
+<stat name="LoginTest" id="s1-s1-s1" pass="1" fail="0" skip="0">POMPRACTICE.TestCases.LoginTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
