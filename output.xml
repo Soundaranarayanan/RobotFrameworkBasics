@@ -1,109 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.14.0a7 on win32)" generated="2025-05-19T19:19:22.143979" rpa="false" schemaversion="5">
-<suite id="s1" name="SauceDemo" source="C:\RobotFrameworkBasics\SauceDemo.robot">
-<test id="s1-t1" name="Login with user  and verify result" line="16">
-<kw name="Validate successful login">
-<kw name="Open the browser with URL">
+<robot generator="Robot 7.2.2 (Python 3.14.0a7 on win32)" generated="2025-05-20T15:30:00.924621" rpa="false" schemaversion="5">
+<suite id="s1" name="MenuNavigationValidationtest" source="c:\RobotFrameworkBasics\POMSauceDemo\TestCases\MenuNavigationValidationtest.robot">
+<test id="s1-t1" name="Validate Clicking Menu Button" line="15">
+<kw name="Open the browser with URL" owner="GenericResources" type="SETUP">
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2025-05-19T19:19:22.823683" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<arg>${browser}</arg>
+<msg time="2025-05-20T15:30:02.520976" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>${browser_name}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2025-05-19T19:19:22.823385" elapsed="5.040826"/>
+<status status="PASS" start="2025-05-20T15:30:02.516269" elapsed="1.982992"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-05-19T19:19:27.865018" level="INFO">Opening url 'https://www.saucedemo.com/v1/index.html'</msg>
+<msg time="2025-05-20T15:30:04.505669" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
 <arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-05-19T19:19:27.864618" elapsed="0.722740"/>
+<status status="PASS" start="2025-05-20T15:30:04.502395" elapsed="1.707219"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-19T19:19:28.587902" elapsed="0.268097"/>
+<status status="PASS" start="2025-05-20T15:30:06.212641" elapsed="0.167428"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-05-19T19:19:28.856263" elapsed="0.002257"/>
+<status status="PASS" start="2025-05-20T15:30:06.383780" elapsed="0.017971"/>
 </kw>
-<status status="PASS" start="2025-05-19T19:19:22.821604" elapsed="6.037161"/>
+<status status="PASS" start="2025-05-20T15:30:02.500974" elapsed="3.902732"/>
 </kw>
-<kw name="Fill the login Form">
+<kw name="Fill the login form" owner="LoginResources">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-19T19:19:28.863337" level="INFO">Typing text '' into text field 'css:input[name="user-name"]'.</msg>
-<arg>css:input[name="user-name"]</arg>
+<msg time="2025-05-20T15:30:06.424331" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T19:19:28.860099" elapsed="0.172511"/>
+<status status="PASS" start="2025-05-20T15:30:06.418510" elapsed="0.268384"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-05-19T19:19:29.033614" level="INFO">Typing password into text field 'css:input[name="password"]'.</msg>
-<msg time="2025-05-19T19:19:29.094114" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>css:input[name="password"]</arg>
+<msg time="2025-05-20T15:30:06.692881" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2025-05-20T15:30:06.765417" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:password</arg>
 <arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T19:19:29.033016" elapsed="0.129790"/>
+<status status="PASS" start="2025-05-20T15:30:06.689185" elapsed="0.178324"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-19T19:19:29.164061" level="INFO">Clicking button 'xpath://input[@id='login-button']'.</msg>
-<arg>${login_btn}</arg>
+<msg time="2025-05-20T15:30:06.874166" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T19:19:29.163268" elapsed="0.134672"/>
+<status status="PASS" start="2025-05-20T15:30:06.869495" elapsed="0.243201"/>
 </kw>
 <arg>${username}</arg>
 <arg>${password}</arg>
-<status status="PASS" start="2025-05-19T19:19:28.859177" elapsed="0.439038"/>
+<status status="PASS" start="2025-05-20T15:30:06.410901" elapsed="0.703626"/>
 </kw>
-<kw name="Verify the message is correct">
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2025-05-19T19:19:29.349677" level="INFO">Element 'xpath://h3' contains text ''.</msg>
-<arg>${error_message}</arg>
-<arg>${verify}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2025-05-19T19:19:29.300266" elapsed="0.049660"/>
+<kw name="Click Menu Button" owner="MenuNavigationValidation">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T15:30:07.129525" level="INFO">Clicking element 'xpath://button[@id='react-burger-menu-btn']'.</msg>
+<arg>${menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T15:30:07.124786" elapsed="0.182363"/>
 </kw>
-<arg>'${verify}'=='Products'</arg>
-<arg>Element Text Should Be</arg>
-<arg>${success_message}</arg>
-<arg>${verify}</arg>
-<arg>ELSE</arg>
-<arg>Element Should Contain</arg>
-<arg>${error_message}</arg>
-<arg>${verify}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-05-19T19:19:29.299568" elapsed="0.050617"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-20T15:30:08.314043" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-20T15:30:07.309298" elapsed="1.010962"/>
 </kw>
-<arg>${verify}</arg>
-<status status="PASS" start="2025-05-19T19:19:29.298663" elapsed="0.052127"/>
+<status status="PASS" start="2025-05-20T15:30:07.120617" elapsed="1.202657"/>
 </kw>
-<arg>${username}</arg>
-<arg>${password}</arg>
-<arg>${verify}</arg>
-<status status="PASS" start="2025-05-19T19:19:22.818543" elapsed="6.532522"/>
+<kw name="Close the browser Session" owner="GenericResources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T15:30:08.346521" elapsed="2.218824"/>
 </kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-05-19T19:19:29.352401" elapsed="3.922159"/>
+<status status="PASS" start="2025-05-20T15:30:08.340009" elapsed="2.228484"/>
 </kw>
-<status status="PASS" start="2025-05-19T19:19:22.815248" elapsed="10.460093"/>
+<tag>Menubutton</tag>
+<status status="PASS" start="2025-05-20T15:30:02.445145" elapsed="8.128761"/>
 </test>
-<status status="PASS" start="2025-05-19T19:19:22.146700" elapsed="11.133855"/>
+<doc>Tests to validate each menu option separately</doc>
+<status status="PASS" start="2025-05-20T15:30:00.964798" elapsed="9.629884"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">Menubutton</stat>
 </tag>
 <suite>
-<stat name="SauceDemo" id="s1" pass="1" fail="0" skip="0">SauceDemo</stat>
+<stat name="MenuNavigationValidationtest" id="s1" pass="1" fail="0" skip="0">MenuNavigationValidationtest</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-05-19T19:19:22.809816" level="ERROR">[ DataDriver ] Error in robot file:
-  File "C:\RobotFrameworkBasics\SauceDemo.robot", line 0</msg>
-<msg time="2025-05-19T19:19:22.810223" level="ERROR">In source file:
-  File "/Users/admi/RobotFrameworkBasicsPOMResourcesTestData.xlsx", line 0</msg>
-<msg time="2025-05-19T19:19:22.814410" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: FileNotFoundError: File attribute was not a full path. Tried to find C:\Users\admi\RobotFrameworkBasicsPOMResourcesTestData.xlsx but file does not exist.</msg>
 </errors>
 </robot>

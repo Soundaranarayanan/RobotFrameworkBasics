@@ -1,17 +1,25 @@
 *** Settings ***
 Resource    ../Resources/LoginResources.robot
-Test Setup    Open Browser To Login Page
-Test Teardown    Close the Browser
+Library     DataDriver    file=../TestData/LoginTestData.xlsx
+Test Template    Perform Login
+
+Suite Setup     Open Browser To Login Page
+Suite Teardown  Close the Browser
 
 *** Test Cases ***
-Login With Valid Credentials
-    Input Email    2k21eee40@kiot.ac.in
-    Input passwrd   KIOT
-    Click Login Button
-    Verify Login Success
+Login Test with Excel Data
+    [Template]    Perform Login
+    ${email}    ${password}
 
-Login With Invalid Credentials
-    Input Email    invaliduser@example.com
-    Input passwrd    wrongpassword
+*** Keywords ***
+Perform Login
+    [Arguments]    ${email}    ${password}
+    Input Email    ${email}
+    Input passwrd  ${password}
     Click Login Button
-    Verify Login Failure
+    Run Keyword And Continue On Failure    Verify Login Success Or Failure
+
+Verify Login Success Or Failure
+    Run Keyword And Return Status    Page Should Contain Element    ${MY_ACCOUNT_HEADER}
+    
+    Page Should Contain Element    ${WARNING_MESSAGE}
