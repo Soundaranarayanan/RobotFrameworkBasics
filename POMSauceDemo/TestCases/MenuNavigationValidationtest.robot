@@ -15,17 +15,23 @@ ${password}    secret_sauce
 Validate Clicking Menu Button
     [Tags]    Menubutton
     LoginResources.Fill the login form    ${username}    ${password}
+
     MenuNavigationValidation.Click Menu Button
 
 Validate All Items Button Navigation
     [Tags]    AllitemsButton
+
     LoginResources.Fill the login form    ${username}    ${password}
     MenuNavigationValidation.Click Product
+    
     MenuNavigationValidation.Click Menu Button
     MenuNavigationValidation.Click All Item Button
 
+
+
 Validate About Button Navigation
     [Tags]    AboutButton
+
     LoginResources.Fill the login form    ${username}    ${password}
     MenuNavigationValidation.Click Menu Button
     MenuNavigationValidation.Click About Button
@@ -33,6 +39,7 @@ Validate About Button Navigation
 
 Validate Reset App State Functionality
     [Tags]    ResetButton
+
     LoginResources.Fill the login form    ${username}    ${password}
     MenuNavigationValidation.Click Add To Cart Sauce Labs Backpack
     MenuNavigationValidation.Click Menu Button

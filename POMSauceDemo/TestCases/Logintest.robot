@@ -14,6 +14,7 @@ ${password}
 
 *** Test Cases ***
 Validate Login with    ${username}    ${password}
+    [Tags]    login
 
 *** Keywords ***
 Validate Login Scenarios
@@ -22,15 +23,22 @@ Validate Login Scenarios
 
     IF    '${username}' == ''
         LoginResources.Verify the error message is displayed for Blank Username
+
+
     ELSE IF    '${password}' == ''
         LoginResources.Verify the error message is displayed for Blank Password
+
+
     ELSE IF    '${username}' == 'standard_user'
         LoginResources.Verify the product title
+
     ELSE IF    '${username}' == 'locked_out_user'
         LoginResources.Verify the error message is displayed for lockedoutuser
+
     ELSE IF    '${username}' == 'performance_glitch_user'
         LoginResources.Verify the product title
+
+        
     ELSE IF    '${username}' == 'problem_user'
         LoginResources.Verify the error message is displayed for wrong Credentials    
-       
     END

@@ -11,6 +11,7 @@ ${sauceLab_url}        https://saucelabs.com/
 ${product}             xpath://div[text()='Sauce Labs Backpack']
 ${url}                 https://www.saucedemo.com/inventory.html
 ${addToCart}           xpath://button[@id='add-to-cart-sauce-labs-backpack']
+${shoppingCart}    xpath://a[@class='shopping_cart_link']
 
 *** Keywords ***
 Click Menu Button
@@ -37,6 +38,8 @@ Click Add To Cart Sauce Labs Backpack
 
 Click Reset App State
     Click Element    ${resetAppState}
+    Click Element    ${shoppingCart}
+    Page Should Not Contain    Sauce Labs Backpack
     
 
 
